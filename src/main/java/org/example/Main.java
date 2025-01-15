@@ -154,16 +154,9 @@ public class Main {
 
         return result;
     }
-    public static void question(){
-        
-    }
-
-    public static void main(String[] args) {
+    public static double question(){
         Scanner scanner = new Scanner(System.in);
-        Vector<Integer> allSurfaceAreas = new Vector<Integer>();
         double surfaceArea = 0.00;
-        double coveragePerLitre = 0.00;
-        double volumeNeeded = 0.00;
 
         System.out.println("Please select how many surface types you wish to calculate for (Square/Rectangles are considered as the same)");
         System.out.println("E.g. 3 (Circle, Triangle, Square)");
@@ -209,33 +202,45 @@ public class Main {
             numOfSurfaceTypes--;
         }
         while(numOfSurfaceTypes != 0);
+        return surfaceArea;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double surfaceArea = 0.00;
+        double coveragePerLitre = 0.00;
+        double volumeNeeded = 0.00;
+        double removableSurfaceArea = 0.00;
+        double finalSurfaceArea = 0.00;
+
+        surfaceArea = question();
 
         System.out.println(surfaceArea);
 
-        System.out.println("Do you have any non-paint surfaces on the surfaces you mentioned earlier? (yes or no)");
-        String response = String.valueOf(scanner);
-        if (response == "yes"){
+        System.out.println("Do you have any non-paint surfaces on the surfaces you mentioned earlier? (1 for yes or 2 for no)");
+        int response = scanner.nextInt();
+        if (response == 1){
+            System.out.println("you have outletssss");
+            removableSurfaceArea = question();
 
-        } else if (response == "no") {
-
+        } else if (response == 2) {
+            System.out.println("you have NOOO outlets");
+            removableSurfaceArea = 0.00;
         }
         else {
             System.out.println("Not valid choice");
         }
 
-
-        // how many coats will be added?
-        // divide surface area by coverage rate per litre
-        // ask for coverage rate or for them to select options
-
         coveragePerLitre = coveragePerLitreCalc();
 
+        finalSurfaceArea = surfaceArea - removableSurfaceArea;
 
-        volumeNeeded = surfaceArea / coveragePerLitre;
+        System.out.println("How many coats of paint are required?");
+        int numOfCoats = scanner.nextInt();
 
-        System.out.println("How many coats ");
+        volumeNeeded = (finalSurfaceArea / coveragePerLitre) * numOfCoats;
 
-
+        System.out.println("You need: " + volumeNeeded + " Litres of paint");
 
     }
 
