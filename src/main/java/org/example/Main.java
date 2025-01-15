@@ -33,7 +33,7 @@ public class Main {
 
         return totalArea;
     }
-    public static int surfaceAreaTriangle(){
+    public static double surfaceAreaTriangle(){
         Scanner sc = new Scanner(System.in);
         double tempArea = 0.00;
         double totalAreaTriangle = 0.00;
@@ -52,20 +52,20 @@ public class Main {
             width = sc.nextDouble();
 
             tempArea = height*width;
-            totalArea = totalArea + tempArea;
+            totalAreaTriangle = totalAreaTriangle + tempArea;
             currentSurface++;
 
         }
-        System.out.println(totalArea);
+        System.out.println(totalAreaTriangle);
 
-        return totalArea;
+        return totalAreaTriangle;
         return 0;
     }
-    public static int surfaceAreaCircle(){
+    public static double surfaceAreaCircle(){
 
         return 0;
     }
-    public static int surfaceAreaSemiCircle(){
+    public static double surfaceAreaSemiCircle(){
 
         return 0;
     }
