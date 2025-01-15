@@ -242,6 +242,13 @@ public class Main {
 
         System.out.println("You need: " + volumeNeeded + " Litres of paint");
 
+        System.out.println("How many Litres of paint are in one paint-can");
+        double litrePerCan = scanner.nextDouble();
+
+        int numOfCansNeeded = (int) (volumeNeeded/litrePerCan);
+
+        System.out.println("You need " + " number of " + litrePerCan + "L cans");
+
     }
 
 }
