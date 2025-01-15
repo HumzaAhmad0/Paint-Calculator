@@ -9,7 +9,7 @@ public class Main {
     public static double surfaceAreaSquare(){
         Scanner sc = new Scanner(System.in);
         double tempArea = 0.00;
-        double totalArea = 0.00;
+        double totalAreaRectangle = 0.00;
         int numOfSurfaces=0;
         double height;
         double width;
@@ -25,13 +25,13 @@ public class Main {
             width = sc.nextDouble();
 
             tempArea = height*width;
-            totalArea = totalArea + tempArea;
+            totalAreaRectangle = totalAreaRectangle + tempArea;
             currentSurface++;
 
         }
-        System.out.println(totalArea);
+        System.out.println(totalAreaRectangle);
 
-        return totalArea;
+        return totalAreaRectangle;
     }
     public static double surfaceAreaTriangle(){
         Scanner sc = new Scanner(System.in);
@@ -39,19 +39,19 @@ public class Main {
         double totalAreaTriangle = 0.00;
         int numOfSurfaces=0;
         double height;
-        double width;
+        double base;
         int currentSurface = 1;
 
-        System.out.println("How many Square / Rectangles would you like to enter measurements for?");
+        System.out.println("How many Triangles would you like to enter measurements for?");
         numOfSurfaces = sc.nextInt();
 
         for(int i = 0; i < numOfSurfaces; i++ ){
             System.out.println("Enter Height Dimension in Meters for surface: " + currentSurface);
             height = sc.nextDouble();
-            System.out.println("Enter Width Dimension in Meters for surface " + currentSurface);
-            width = sc.nextDouble();
+            System.out.println("Enter Base Dimension in Meters for surface " + currentSurface);
+            base = sc.nextDouble();
 
-            tempArea = height*width;
+            tempArea = (height*base)/2;
             totalAreaTriangle = totalAreaTriangle + tempArea;
             currentSurface++;
 
