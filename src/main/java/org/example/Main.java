@@ -139,11 +139,32 @@ public class Main {
 
         return totalAreaTrapezoid;
     }
+    public static double coveragePerLitreCalc(){
+        double result= 0.00;
+        double squareMeter = 0.00;
+        double liter = 0.00;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please enter the coverage of your paint per square meter");
+        System.out.print("Please input the square meters: ");
+        squareMeter = sc.nextDouble();
+        System.out.print("Please input the liters: ");
+        liter = sc.nextDouble();
+        result = squareMeter/liter;
+
+        return result;
+    }
+    public static void question(){
+        
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Vector<Integer> allSurfaceAreas = new Vector<Integer>();
         double surfaceArea = 0.00;
+        double coveragePerLitre = 0.00;
+        double volumeNeeded = 0.00;
+
         System.out.println("Please select how many surface types you wish to calculate for (Square/Rectangles are considered as the same)");
         System.out.println("E.g. 3 (Circle, Triangle, Square)");
         int numOfSurfaceTypes = scanner.nextInt();
@@ -190,9 +211,31 @@ public class Main {
         while(numOfSurfaceTypes != 0);
 
         System.out.println(surfaceArea);
+
+        System.out.println("Do you have any non-paint surfaces on the surfaces you mentioned earlier? (yes or no)");
+        String response = String.valueOf(scanner);
+        if (response == "yes"){
+
+        } else if (response == "no") {
+
+        }
+        else {
+            System.out.println("Not valid choice");
+        }
+
+
         // how many coats will be added?
         // divide surface area by coverage rate per litre
         // ask for coverage rate or for them to select options
+
+        coveragePerLitre = coveragePerLitreCalc();
+
+
+        volumeNeeded = surfaceArea / coveragePerLitre;
+
+        System.out.println("How many coats ");
+
+
 
     }
 
