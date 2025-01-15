@@ -59,7 +59,7 @@ public class Main {
         System.out.println(totalAreaTriangle);
 
         return totalAreaTriangle;
-        return 0;
+
     }
     public static double surfaceAreaCircle(){
 
