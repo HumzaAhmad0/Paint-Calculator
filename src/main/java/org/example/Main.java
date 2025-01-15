@@ -86,8 +86,28 @@ public class Main {
         return totalAreaCircle;
     }
     public static double surfaceAreaSemiCircle(){
+        Scanner sc = new Scanner(System.in);
+        double tempArea = 0.00;
+        double totalAreaSemiCircle = 0.00;
+        int numOfSurfaces=0;
+        double radius;
+        int currentSurface = 1;
 
-        return 0;
+        System.out.println("How many Triangles would you like to enter measurements for?");
+        numOfSurfaces = sc.nextInt();
+
+        for(int i = 0; i < numOfSurfaces; i++ ){
+            System.out.println("Enter Radius Dimension in Meters for surface: " + currentSurface);
+            radius = sc.nextDouble();
+
+            tempArea = (Math.PI*(radius*radius))/2;
+            totalAreaSemiCircle = totalAreaSemiCircle + tempArea;
+            currentSurface++;
+
+        }
+        System.out.println(totalAreaSemiCircle);
+
+        return totalAreaSemiCircle;
     }
 
     public static void main(String[] args) {
