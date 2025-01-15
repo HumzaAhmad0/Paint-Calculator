@@ -109,13 +109,43 @@ public class Main {
 
         return totalAreaSemiCircle;
     }
+    public static double surfaceAreaTrapezoid(){
+        Scanner sc = new Scanner(System.in);
+        double tempArea = 0.00;
+        double totalAreaTrapezoid = 0.00;
+        int numOfSurfaces=0;
+        double height;
+        double base;
+        double base2;
+        int currentSurface = 1;
+
+        System.out.println("How many Square / Rectangles would you like to enter measurements for?");
+        numOfSurfaces = sc.nextInt();
+
+        for(int i = 0; i < numOfSurfaces; i++ ){
+            System.out.println("Enter Height Dimension in Meters for surface: " + currentSurface);
+            height = sc.nextDouble();
+            System.out.println("Enter the first base Dimension in Meters for surface " + currentSurface);
+            base = sc.nextDouble();
+            System.out.println("Enter the second base Dimension in Meters for surface " + currentSurface);
+            base2 = sc.nextDouble();
+
+            tempArea = ((base*base2)/2)*height;
+            totalAreaTrapezoid = totalAreaTrapezoid + tempArea;
+            currentSurface++;
+
+        }
+        System.out.println(totalAreaTrapezoid);
+
+        return totalAreaTrapezoid;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Vector<Integer> allSurfaceAreas = new Vector<Integer>();
         double surfaceArea = 0.00;
         System.out.println("Please select how many surface types you wish to calculate for (Square/Rectangles are considered as the same)");
-        System.out.println("E.g. I have 3 surface types (Circle, Triangle, Square)");
+        System.out.println("E.g. 3 (Circle, Triangle, Square)");
         int numOfSurfaceTypes = scanner.nextInt();
 
         do {
@@ -124,6 +154,7 @@ public class Main {
             System.out.println("2: Triangle");
             System.out.println("3: Circle");
             System.out.println("4: Semi-Circle");
+            System.out.println("5: Trapezoid");
 
             int userChoiceSurface = scanner.nextInt();
 
@@ -144,8 +175,12 @@ public class Main {
                     System.out.println("4: Semi-Circle");
                     surfaceArea = surfaceArea + surfaceAreaSemiCircle();
                     break;
+                case 5:
+                    System.out.println("5: Trapezoid");
+                    surfaceArea = surfaceArea + surfaceAreaTrapezoid();
+                    break;
                 default:
-                    System.out.println("error");
+                    System.out.println("Not valid input");
 
                     break;
             }
