@@ -159,7 +159,7 @@ public class Main {
         double surfaceArea = 0.00;
 
         System.out.println("Please select how many surface types you wish to calculate for (Square/Rectangles are considered as the same)");
-        System.out.println("E.g. 3 (Circle, Triangle, Square)");
+        System.out.println("E.g. 3 (Circle, Triangle, Square) (as an integer e.g. 1,2,3,4, etc)");
         int numOfSurfaceTypes = scanner.nextInt();
 
         do {
@@ -203,6 +203,9 @@ public class Main {
         }
         while(numOfSurfaceTypes != 0);
         return surfaceArea;
+    }
+    public static void error(){
+
     }
 
     public static void main(String[] args) {
